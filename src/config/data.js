@@ -5,21 +5,24 @@ export const weddingData = {
     father: "Bpk. Nama Ayah Aksan",
     mother: "Ibu Nama Ibu Aksan",
     instagram: "@aksan_maulana",
-    photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&auto=format&fit=crop"
+    photo: "/aksan2.jpg"
   },
   bride: {
-    name: "Wanita",
-    fullName: "Wanita Jelita",
+    name: "Tia",
+    fullName: "Tia Rahmawati",
     father: "Bpk. Nama Ayah Wanita",
     mother: "Ibu Nama Ibu Wanita",
     instagram: "@wanita_jelita",
-    photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop"
+    photo: "/tia2.jpg"
   },
   date: "2026-12-31T09:00:00", // Format: YYYY-MM-DDTHH:mm:ss
   events: [
     {
       title: "Akad Nikah",
-      date: "Kamis, 31 Desember 2026",
+      date: "31",
+      day: "Kamis",
+      month: "Desember",
+      year: "2026",
       time: "08:00 WIB - Selesai",
       location: "Masjid Agung Kota Impian",
       address: "Jl. Masjid Raya No. 1, Kota Impian",
@@ -27,7 +30,10 @@ export const weddingData = {
     },
     {
       title: "Resepsi",
-      date: "Kamis, 31 Desember 2026",
+      date: "31",
+      day: "Kamis",
+      month: "Desember",
+      year: "2026",
       time: "11:00 WIB - 14:00 WIB",
       location: "Gedung Serbaguna",
       address: "Jl. Resepsi Mewah No. 2, Kota Impian",
@@ -49,5 +55,5 @@ export const weddingData = {
     "/WhatsApp Image 2026-03-04 at 14.29.57(3).jpeg",
   ],
   whatsappNumber: "+6281234567890", // Ganti dengan nomor WhatsApp (harus diawali dengan kode negara tanpa +, misal 62) tapi di string ini saya beri contoh, namun nanti pas format dihapus +
-  musicUrl: "/background-music.mp3", // Letakkan file background-music.mp3 di folder public
+  musicUrl: "/backsound.mp3", // Letakkan file background-music.mp3 di folder public
 };

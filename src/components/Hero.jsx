@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import hero from '/hero.jpeg'
+import hero from '/hero.jpeg';
+import bismillah from '/bismillah2.webp';
 
 export default function Hero({ data }) {
   const calculateTimeLeft = () => {
@@ -32,15 +33,24 @@ export default function Hero({ data }) {
       className="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-fixed"
       style={{ backgroundImage: `url(${hero})` }}
     >
-      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="absolute inset-0 bg-black/50"></div>
       
       <div className="relative text-center z-10 p-6">
+        <div className="">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.8 }}
+        >
+          <img src={bismillah} alt="Bismillah" className="w-48 mx-auto mb-4" />
+        </motion.div>
         <motion.h4 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
           transition={{ duration: 0.8 }}
-          className="text-Primary font-serif font-bold tracking-[0.2em] mb-4 text-sm md:text-base uppercase"
+          className="text-Primary font-serif font-bold tracking-[0.2em] mb-8 text-sm md:text-base uppercase"
         >
           Pernikahan Kami
         </motion.h4>
@@ -50,11 +60,11 @@ export default function Hero({ data }) {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: false }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="text-6xl md:text-9xl text-white font-script mb-6 drop-shadow-2xl"
+          className="text-6xl md:text-9xl text-Primary  font-script mb-6 drop-shadow-2xl"
         >
-          {data.groom.name} & {data.bride.name}
+            {data.bride.name} & {data.groom.name}
         </motion.h1>
-
+        </div>
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -76,12 +86,12 @@ export default function Hero({ data }) {
         >
           {Object.keys(timeLeft).map((interval, index) => (
             <div key={index} className="flex flex-col items-center">
-              <div className="w-16 h-16 md:w-20 md:h-20 glass-panel flex items-center justify-center mb-2">
-                <span className="text-2xl md:text-4xl font-serif text-Primary">
+              <div className="w-16 h-16 md:w-20 md:h-20 bg-white/20 backdrop-blur-lg rounded-2xl flex items-center justify-center mb-2">
+                <span className="text-2xl md:text-4xl font-bold font-serif text-Primary">
                   {timeLeft[interval] || '0'}
                 </span>
               </div>
-              <span className="text-white font-serif tracking-wider text-xs md:text-sm uppercase shadow-black drop-shadow-md">
+              <span className="text-white font-serif tracking-wider text-sm md:text-sm uppercase shadow-black drop-shadow-md">
                 {interval}
               </span>
             </div>

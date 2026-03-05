@@ -17,12 +17,13 @@ export default function OpeningModal({ isOpened, onOpen, groomName, brideName })
           <div className="absolute inset-0 bg-black/40 backdrop-blur-xs"></div>
 
           {/* Content */}
-          <div className="relative z-10 text-center px-4 flex flex-col items-center justify-center h-full  w-full">
+          <div className="relative z-10 text-center flex flex-col items-center justify-center h-full  w-full">
+            <div className="h-1/2 flex flex-col items-center pt-14 justify-start">
             <motion.h4 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="text-Primary uppercase tracking-widest text-3xl md:text-5xl mb-16 font-serif font-bold"
+              className="text-Primary uppercase tracking-widest text-xl md:text-5xl mb-6 font-serif font-bold"
             >
               The Wedding Of
             </motion.h4>
@@ -35,17 +36,18 @@ export default function OpeningModal({ isOpened, onOpen, groomName, brideName })
             >
               {brideName} & {groomName}
             </motion.h1>
-
+            </div>
+            <div className="h-1/2 w-full flex items-end">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2, duration: 0.8 }}
-              className="bg-black/40 backdrop-blur-sm md:max-w-sm rounded-2xl p-8 w-full border border-white/20"
+              className="bg-gradient-to-t from-black via-black/70 to-transparent pt-24 pb-8 px-8 w-full md:max-w-md mx-auto"
             >
-              <p className="text-sm text-Background mb-2 font-serif opacity-80">
+              <p className="text-xs text-Background mb-2 font-serif opacity-80">
                 Kpd. Bpk/Ibu/Saudara/i
               </p>
-              <h3 className="text-xl font-bold font-serif mb-6 text-Accent uppercase">
+              <h3 className="text-lg font-bold font-serif mb-6 text-Accent uppercase">
                 Tamu Undangan
               </h3>
 
@@ -53,12 +55,14 @@ export default function OpeningModal({ isOpened, onOpen, groomName, brideName })
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={onOpen}
-                className="mx-auto flex items-center gap-2 bg-Primary text-white py-3 px-8 rounded-full font-serif text-sm tracking-wide shadow-lg hover:shadow-Primary/50 transition-all"
+                className="mx-auto flex items-center gap-2 bg-Primary text-white py-2 px-6 rounded-full font-serif text-xs tracking-wide shadow-lg hover:shadow-Primary/50 transition-all"
               >
-                <MailOpen size={20} />
+                <MailOpen size={16} />
                 Buka Undangan
               </motion.button>
+              <p className="text-[8px] text-Background mt-2 font-serif opacity-80">*Mohon Maaf Bila Ada Kesalahan Penulisan Nama / Gelar</p>
             </motion.div>
+            </div>
           </div>
         </motion.div>
       )}
