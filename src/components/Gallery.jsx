@@ -88,27 +88,19 @@ export default function Gallery({ images }) {
             onClick={closeLightbox}
             className="fixed inset-0 z-[999] bg-black/90 backdrop-blur-md flex items-center justify-center p-4 md:p-8"
           >
-            <motion.button 
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="absolute top-6 right-6 text-white hover:text-Primary transition-colors z-[1000]"
-              onClick={closeLightbox}
-            >
-              <X size={32} />
-            </motion.button>
-
+            
             <button 
               className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-Primary transition-colors z-[1000] bg-white/5 p-2 rounded-full"
               onClick={prevImage}
             >
-              <ChevronLeft size={48} />
+              <ChevronLeft size={35} />
             </button>
 
             <button 
               className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-Primary transition-colors z-[1000] bg-white/5 p-2 rounded-full"
               onClick={nextImage}
             >
-              <ChevronRight size={48} />
+              <ChevronRight size={35} />
             </button>
 
             <motion.div
