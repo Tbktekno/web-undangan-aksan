@@ -15,13 +15,14 @@ export const weddingData = {
     instagram: "@wanita_jelita",
     photo: "/tia2.jpg"
   },
-  date: "2026-12-31T09:00:00", // Format: YYYY-MM-DDTHH:mm:ss
+  date: "2026-03-24T09:00:00", // Format: YYYY-MM-DDTHH:mm:ss
+  date2: "24 Maret 2026",
   events: [
     {
       title: "Akad Nikah",
-      date: "31",
-      day: "Kamis",
-      month: "Desember",
+      date: "24",
+      day: "Senin",
+      month: "Maret",
       year: "2026",
       time: "08:00 WIB - Selesai",
       location: "Masjid Agung Kota Impian",

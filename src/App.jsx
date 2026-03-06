@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import OpeningModal from './components/OpeningModal';
-import Hero from './components/Hero';
+import Hero, { heroImage } from './components/Hero';
+import Verse from './components/Verse';
 import CoupleInfo from './components/CoupleInfo';
 import EventDetails from './components/EventDetails';
 import History from './components/History';
@@ -19,7 +20,7 @@ function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-Background overflow-hidden">
+    <div className="relative min-h-screen bg-black overflow-hidden">
       {/* Audio Controller hidden but functional, or visible for pause/play */}
       {playAudio && <AudioController musicUrl={weddingData.musicUrl} isOpened={isOpened} />}
 
@@ -32,7 +33,19 @@ function App() {
 
       {/* Main Content (Visible only when opened) */}
       <div className={`transition-opacity duration-1000 ${isOpened ? 'opacity-100' : 'opacity-0 h-0 overflow-hidden'}`}>
-        <Hero data={weddingData} />
+        
+        {/* Connected Background for Hero and Verse */}
+        <div 
+          className="relative bg-cover bg-[center_30%]"
+          style={{ backgroundImage: `url(${heroImage})` }}
+        >
+          {/* Overlay to ensure readability and smooth blending */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 via-[70%] to-black"></div>
+          
+          <Hero data={weddingData} />
+          <Verse />
+        </div>
+
         <CoupleInfo groom={weddingData.groom} bride={weddingData.bride} />
         <EventDetails events={weddingData.events} />
         <History history={weddingData.history} />
