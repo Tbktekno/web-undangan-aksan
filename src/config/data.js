@@ -54,6 +54,26 @@ export const weddingData = {
     "/WhatsApp Image 2026-03-04 at 14.29.57(2).jpeg",
     "/WhatsApp Image 2026-03-04 at 14.29.57(3).jpeg",
   ],
-  whatsappNumber: "+6281234567890", // Ganti dengan nomor WhatsApp (harus diawali dengan kode negara tanpa +, misal 62) tapi di string ini saya beri contoh, namun nanti pas format dihapus +
-  musicUrl: "/backsound.mp3", // Letakkan file background-music.mp3 di folder public
+  history: [
+    {
+      date: "12 Januari 2020",
+      title: "Pertemuan Pertama",
+      description: "Berawal dari pertemuan tak sengaja di sebuah perpustakaan kota. Tatapan mata pertama yang membawa sejuta cerita.",
+      image: "/WhatsApp Image 2026-03-04 at 14.29.55(1).jpeg"
+    },
+    {
+      date: "14 Februari 2022",
+      title: "Menjalin Janji",
+      description: "Di hari kasih sayang ini, kami memutuskan untuk melangkah lebih serius dan membangun komitmen bersama.",
+      image: "/WhatsApp Image 2026-03-04 at 14.29.56(1).jpeg"
+    },
+    {
+      date: "01 Januari 2024",
+      title: "Momen Lamaran",
+      description: "Dengan izin Allah dan restu kedua orang tua, janji suci diucapkan untuk melangkah ke pelaminan.",
+      image: "/WhatsApp Image 2026-03-04 at 14.29.57(1).jpeg"
+    }
+  ],
+  whatsappNumber: "6281234567890", 
+  musicUrl: "/backsound.mp3",
 };

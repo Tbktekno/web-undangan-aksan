@@ -3,6 +3,7 @@ import OpeningModal from './components/OpeningModal';
 import Hero from './components/Hero';
 import CoupleInfo from './components/CoupleInfo';
 import EventDetails from './components/EventDetails';
+import History from './components/History';
 import Gallery from './components/Gallery';
 import RSVP from './components/RSVP';
 import AudioController from './components/AudioController';
@@ -34,6 +35,7 @@ function App() {
         <Hero data={weddingData} />
         <CoupleInfo groom={weddingData.groom} bride={weddingData.bride} />
         <EventDetails events={weddingData.events} />
+        <History history={weddingData.history} />
         <Gallery images={weddingData.gallery} />
         <RSVP whatsappNumber={weddingData.whatsappNumber} />
 
