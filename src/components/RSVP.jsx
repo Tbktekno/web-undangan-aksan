@@ -22,96 +22,94 @@ export default function RSVP({ whatsappNumber }) {
   };
 
   return (
-    <section className="py-24 bg-white relative">
-      <div className="max-w-4xl mx-auto px-4 relative z-10 flex flex-col md:flex-row gap-12 bg-Background/50 p-8 md:p-12 rounded-3xl shadow-xl border border-Background">
-        
-        <motion.div 
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.8 }}
-          className="md:w-1/2"
-        >
-          <h4 className="text-sm md:text-base text-Primary font-serif uppercase tracking-widest font-bold mb-4">
-            Konfirmasi
-          </h4>
-          <h2 className="text-4xl md:text-5xl font-script text-Text mb-6">
-            RSVP & Ucapan
-          </h2>
-          <p className="text-Text/70 font-serif leading-relaxed mb-8">
+    <section className="py-32 bg-background relative overflow-hidden">
+      <div className="max-w-4xl mx-auto px-6 relative z-10">
+        <div className="flex flex-col items-center text-center mb-16">
+          <motion.h4 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-primary font-display tracking-[0.3em] uppercase text-xs mb-4"
+          >
+            Reservation
+          </motion.h4>
+          <motion.h2 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            className="text-4xl md:text-6xl font-display text-primary uppercase tracking-widest mb-6"
+          >
+            RSVP
+          </motion.h2>
+          <p className="text-secondary font-sans leading-relaxed max-w-lg italic opacity-60">
             Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.
           </p>
-        </motion.div>
+        </div>
 
         <motion.form 
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
           onSubmit={handleSubmit}
-          className="md:w-1/2 space-y-4"
+          className="max-w-2xl mx-auto space-y-8 bg-surface/20 backdrop-blur-sm p-8 md:p-12 border border-white/5 rounded-sm shadow-2xl"
         >
-          <div>
-            <label className="block text-sm font-sans font-medium text-Text/80 mb-1">Nama Lengkap</label>
-            <input 
-              type="text" 
-              name="name"
-              required
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full px-4 py-3 rounded-lg border border-Primary/30 bg-white focus:outline-none focus:ring-2 focus:ring-Primary transition-all font-sans"
-              placeholder="Contoh: John Doe"
-            />
-          </div>
-
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-sans font-medium text-Text/80 mb-1">Kehadiran</label>
-              <select
-                name="attendance"
-                value={formData.attendance}
+          <div className="space-y-6">
+            <div className="relative">
+              <input 
+                type="text" 
+                name="name"
+                required
+                value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg border border-Primary/30 bg-white focus:outline-none focus:ring-2 focus:ring-Primary transition-all font-sans cursor-pointer"
-              >
-                <option value="Hadir">Hadir</option>
-                <option value="Tidak Hadir">Tidak Hadir</option>
-                <option value="Mungkin">Mungkin</option>
-              </select>
+                placeholder="Name"
+                className="w-full bg-transparent border-b border-white/20 py-3 px-0 text-primary font-display tracking-widest focus:outline-none focus:border-primary transition-colors placeholder:text-white/20"
+              />
             </div>
-            <div>
-              <label className="block text-sm font-sans font-medium text-Text/80 mb-1">Jumlah Tamu</label>
-              <select
-                name="guests"
-                value={formData.guests}
-                onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg border border-Primary/30 bg-white focus:outline-none focus:ring-2 focus:ring-Primary transition-all font-sans cursor-pointer"
-              >
-                <option value="1">1 Orang</option>
-                <option value="2">2 Orang</option>
-                <option value="3+">Lebih dari 2</option>
-              </select>
-            </div>
-          </div>
 
-          <div>
-            <label className="block text-sm font-sans font-medium text-Text/80 mb-1">Pesan & Doa Restu</label>
-            <textarea 
-              name="message"
-              required
-              value={formData.message}
-              onChange={handleChange}
-              rows="4"
-              className="w-full px-4 py-3 rounded-lg border border-Primary/30 bg-white focus:outline-none focus:ring-2 focus:ring-Primary transition-all font-sans resize-none"
-              placeholder="Berikan ucapan atau doa restu..."
-            ></textarea>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="relative">
+                <select
+                  name="attendance"
+                  value={formData.attendance}
+                  onChange={handleChange}
+                  className="w-full bg-transparent border-b border-white/20 py-3 px-0 text-primary font-display tracking-widest focus:outline-none focus:border-primary transition-colors cursor-pointer appearance-none uppercase text-xs"
+                >
+                  <option className="bg-background text-primary" value="Hadir">Will Attend</option>
+                  <option className="bg-background text-primary" value="Tidak Hadir">Will Not Attend</option>
+                </select>
+              </div>
+              <div className="relative">
+                <select
+                  name="guests"
+                  value={formData.guests}
+                  onChange={handleChange}
+                  className="w-full bg-transparent border-b border-white/20 py-3 px-0 text-primary font-display tracking-widest focus:outline-none focus:border-primary transition-colors cursor-pointer appearance-none uppercase text-xs"
+                >
+                  <option className="bg-background text-primary" value="1">1 Person</option>
+                  <option className="bg-background text-primary" value="2">2 Persons</option>
+                  <option className="bg-background text-primary" value="3+">More than 2</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="relative">
+              <textarea 
+                name="message"
+                required
+                value={formData.message}
+                onChange={handleChange}
+                rows="4"
+                placeholder="Wishes & Prayers"
+                className="w-full bg-transparent border-b border-white/20 py-3 px-0 text-primary font-display tracking-widest focus:outline-none focus:border-primary transition-colors resize-none placeholder:text-white/20"
+              ></textarea>
+            </div>
           </div>
 
           <button 
             type="submit"
-            className="w-full flex justify-center items-center gap-2 bg-Primary text-white py-4 rounded-lg font-sans font-semibold tracking-wide hover:bg-opacity-90 transition-colors shadow-lg hover:shadow-xl mt-4"
+            className="w-full btn-outline flex justify-center items-center gap-3 py-4 mt-8 hover:bg-white/10"
           >
-            <Send size={20} />
-            Kirim via WhatsApp
+            <Send size={16} />
+            Confirm via WhatsApp
           </button>
         </motion.form>
       </div>

@@ -2,27 +2,27 @@ export const weddingData = {
   groom: {
     name: "Aksan",
     fullName: "Aksan Jaya",
-    father: "Bpk. Nama Ayah Aksan",
-    mother: "Ibu Nama Ibu Aksan",
+    father: "Bpk. Undung",
+    mother: "Ibu",
     instagram: "@aksan_maulana",
-    photo: "/aksan2.jpg"
+    photo: "/aksan2.jpg",
   },
   bride: {
     name: "Tia",
     fullName: "Tia Rahmawati",
-    father: "Bpk. Nama Ayah Wanita",
-    mother: "Ibu Nama Ibu Wanita",
+    father: "Bpk. Ujang Suryana",
+    mother: "Ibu",
     instagram: "@wanita_jelita",
-    photo: "/tia2.jpg"
+    photo: "/tia2.jpg",
   },
-  date: "2026-03-24T09:00:00", // Format: YYYY-MM-DDTHH:mm:ss
-  date2: "24 Maret 2026",
+  date: "2026-05-21T09:00:00", // Format: YYYY-MM-DDTHH:mm:ss
+  date2: "21 Mei 2026",
   events: [
     {
       title: "Akad Nikah",
-      date: "24",
-      day: "Senin",
-      month: "Maret",
+      date: "21",
+      day: "Kamis",
+      month: "Mei",
       year: "2026",
       time: "08:00 WIB - Selesai",
       location: "Masjid Agung Kota Impian",
@@ -31,15 +31,15 @@ export const weddingData = {
     },
     {
       title: "Resepsi",
-      date: "31",
+      date: "21",
       day: "Kamis",
-      month: "Desember",
+      month: "Mei",
       year: "2026",
-      time: "11:00 WIB - 14:00 WIB",
+      time: "09:00 WIB - Selesai",
       location: "Gedung Serbaguna",
       address: "Jl. Resepsi Mewah No. 2, Kota Impian",
       mapUrl: "https://goo.gl/maps/contoh",
-    }
+    },
   ],
   gallery: [
     "/WhatsApp Image 2026-03-04 at 14.29.54(2).jpeg",
@@ -59,22 +59,25 @@ export const weddingData = {
     {
       date: "12 Januari 2020",
       title: "Pertemuan Pertama",
-      description: "Berawal dari pertemuan tak sengaja di sebuah perpustakaan kota. Tatapan mata pertama yang membawa sejuta cerita.",
-      image: "/WhatsApp Image 2026-03-04 at 14.29.55(1).jpeg"
+      description:
+        "Berawal dari pertemuan tak sengaja di sebuah perpustakaan kota. Tatapan mata pertama yang membawa sejuta cerita.",
+      image: "/WhatsApp Image 2026-03-04 at 14.29.55(1).jpeg",
     },
     {
       date: "14 Februari 2022",
       title: "Menjalin Janji",
-      description: "Di hari kasih sayang ini, kami memutuskan untuk melangkah lebih serius dan membangun komitmen bersama.",
-      image: "/WhatsApp Image 2026-03-04 at 14.29.56(1).jpeg"
+      description:
+        "Di hari kasih sayang ini, kami memutuskan untuk melangkah lebih serius dan membangun komitmen bersama.",
+      image: "/WhatsApp Image 2026-03-04 at 14.29.56(1).jpeg",
     },
     {
       date: "01 Januari 2024",
       title: "Momen Lamaran",
-      description: "Dengan izin Allah dan restu kedua orang tua, janji suci diucapkan untuk melangkah ke pelaminan.",
-      image: "/WhatsApp Image 2026-03-04 at 14.29.57(1).jpeg"
-    }
+      description:
+        "Dengan izin Allah dan restu kedua orang tua, janji suci diucapkan untuk melangkah ke pelaminan.",
+      image: "/WhatsApp Image 2026-03-04 at 14.29.57(1).jpeg",
+    },
   ],
-  whatsappNumber: "6281234567890", 
+  whatsappNumber: "6281234567890",
   musicUrl: "/backsound.mp3",
 };

@@ -3,6 +3,10 @@ import { MailOpen } from 'lucide-react';
 import background from '/background.jpeg';
 
 export default function OpeningModal({ isOpened, onOpen, groomName, brideName }) {
+  // Parse dynamic guest name from URL
+  const queryParams = new URLSearchParams(window.location.search);
+  const guestName = queryParams.get('to') || 'Tamu Undangan';
+
   return (
     <AnimatePresence>
       {!isOpened && (
@@ -14,55 +18,49 @@ export default function OpeningModal({ isOpened, onOpen, groomName, brideName })
           style={{ backgroundImage: `url(${background})` }}
         >
           {/* Overlay */}
-          <div className="absolute inset-0 bg-black/40 backdrop-blur-xs"></div>
+          <div className="absolute inset-0 bg-black/50"></div>
 
           {/* Content */}
-          <div className="relative z-10 text-center flex flex-col items-center justify-center h-full  w-full">
-            <div className="h-1/2 flex flex-col items-center pt-14 justify-start">
-            <motion.h4 
+          <div className="relative z-10 text-center flex flex-col items-center justify-between h-full w-full py-20 px-6">
+            <motion.div 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="text-Primary uppercase tracking-widest text-xl md:text-5xl mb-6 font-serif font-bold"
+              className="flex flex-col items-center gap-4"
             >
-              The Wedding Of
-            </motion.h4>
+              <h4 className="text-white/80 font-script text-3xl mb-2">The Wedding Of</h4>
+              <h1 className="text-4xl md:text-7xl text-white font-display tracking-widest uppercase border-y border-white/20 py-4 px-8">
+                {brideName} <span className="text-2xl lowercase font-script mx-2">&</span> {groomName}
+              </h1>
+            </motion.div>
             
-            <motion.h1 
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.8, duration: 1 }}
-              className="text-6xl md:text-8xl text-Background font-script mb-32 drop-shadow-lg"
-            >
-              {brideName} & {groomName}
-            </motion.h1>
-            </div>
-            <div className="h-1/2 w-full flex items-end">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2, duration: 0.8 }}
-              className="bg-gradient-to-t from-black via-black/70 to-transparent pt-24 pb-8 px-8 w-full md:max-w-md mx-auto"
+              className="flex flex-col items-center w-full max-w-sm mx-auto"
             >
-              <p className="text-xs text-Background mb-2 font-serif opacity-80">
+              <p className="text-sm text-secondary mb-2 font-sans opacity-80 uppercase tracking-widest">
                 Kpd. Bpk/Ibu/Saudara/i
               </p>
-              <h3 className="text-lg font-bold font-serif mb-6 text-Accent uppercase">
-                Tamu Undangan
+              <h3 className="text-2xl font-display font-bold mb-8 text-primary uppercase tracking-wider">
+                {guestName}
               </h3>
 
               <motion.button
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.1)' }}
                 whileTap={{ scale: 0.95 }}
                 onClick={onOpen}
-                className="mx-auto flex items-center gap-2 bg-Primary text-white py-2 px-6 rounded-full font-serif text-xs tracking-wide shadow-lg hover:shadow-Primary/50 transition-all"
+                className="btn-outline flex items-center gap-3"
               >
-                <MailOpen size={16} />
+                <MailOpen size={18} />
                 Buka Undangan
               </motion.button>
-              <p className="text-[8px] text-Background mt-2 font-serif opacity-80">*Mohon Maaf Bila Ada Kesalahan Penulisan Nama / Gelar</p>
+              
+              <p className="text-[10px] text-secondary mt-6 font-sans opacity-60 italic whitespace-nowrap">
+                *Mohon Maaf Bila Ada Kesalahan Penulisan Nama/Gelar
+              </p>
             </motion.div>
-            </div>
           </div>
         </motion.div>
       )}

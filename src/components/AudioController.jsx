@@ -35,12 +35,17 @@ export default function AudioController({ musicUrl, isOpened }) {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 2, duration: 0.5 }}
           onClick={togglePlay}
-          className="fixed bottom-3 right-3 z-40 bg-Primary/80 backdrop-blur-md text-white p-2 rounded-full shadow-xl hover:bg-Primary transition-colors border border-white/20"
+          className="fixed bottom-6 right-6 z-40 bg-white/10 backdrop-blur-xl text-white p-3 rounded-full shadow-2xl hover:bg-white/20 transition-all border border-white/20"
         >
           {isPlaying ? (
-            <PauseCircle size={20} className="animate-pulse" />
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
+            >
+              <PauseCircle size={24} strokeWidth={1} />
+            </motion.div>
           ) : (
-            <PlayCircle size={20} />
+            <PlayCircle size={24} strokeWidth={1} />
           )}
         </motion.button>
       )}

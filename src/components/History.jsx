@@ -2,73 +2,56 @@ import { motion } from 'framer-motion';
 
 export default function History({ history }) {
   return (
-    <section className="py-24 bg-Background overflow-hidden">
-      <div className="max-w-4xl mx-auto px-4">
+    <section className="py-32 bg-surface/5 relative overflow-hidden">
+      <div className="max-w-4xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <motion.h4 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-sm md:text-base text-Primary font-serif uppercase tracking-widest font-bold mb-4"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-primary font-display tracking-[0.3em] uppercase text-xs mb-4"
           >
-            Love Story
+            Our Journey
           </motion.h4>
           <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-4xl md:text-5xl font-script text-Text"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            className="text-4xl md:text-6xl font-display text-primary uppercase tracking-widest"
           >
-            Kisah Perjalanan Kami
+            Love Story
           </motion.h2>
         </div>
 
         {/* Timeline Items */}
-        <div className="relative">
+        <div className="relative border-l border-white/10 ml-4 md:ml-0 md:flex md:flex-col md:items-center">
           {history.map((item, index) => (
-            <div key={index} className="relative mb-10 last:mb-0">
-              <div className={`flex flex-col ${index % 2 === 0 ? 'items-end text-right' : 'items-start text-left'}`}>
-                {/* Image Card */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9, rotate: index % 2 === 0 ? -2 : 2 }}
-                  whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
-                  className="relative group w-full max-w-md aspect-[4/3] mb-10"
-                >
-                  <div className={`absolute inset-0 bg-Primary/10 rounded-2xl ${index % 2 === 0 ? 'rotate-3' : '-rotate-3'} scale-105 transition-transform group-hover:rotate-1`}></div>
-                  <div className="relative h-full rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
-                    <img src={item.image} alt={item.title} className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-110" />
-                  </div>
-                </motion.div>
+            <div key={index} className="relative mb-24 last:mb-0 w-full md:w-1/2 md:even:self-end md:odd:self-start md:px-12">
+              {/* Dot on timeline */}
+              <div className="absolute -left-[21px] md:left-auto md:right-[-9px] md:even:left-[-9px] top-0 w-4 h-4 rounded-full bg-primary border-4 border-background animate-pulse"></div>
 
-                {/* Content */}
-                <motion.div
-                  initial={{ opacity: 0, x: index % 2 === 0 ? 30 : -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                  className="max-w-xl"
-                >
-                  <div className={`inline-block relative mb-6`}>
-                    <span className="text-Primary font-bold font-serif tracking-widest text-sm uppercase">
-                      {item.date}
-                    </span>
-                    <div className={`absolute -bottom-2 ${index % 2 === 0 ? 'right-0' : 'left-0'} w-full h-[1px] bg-Primary/30`}></div>
-                  </div>
-                  
-                  <h3 className="text-2xl md:text-4xl font-script text-Primary mb-4">
-                    {item.title}
-                  </h3>
-                  <div className="relative">
-                    <p className="text-Text/80 font-serif leading-relaxed italic text-base md:text-lg">
-                      "{item.description}"
-                    </p>
-                  </div>
-                </motion.div>
-              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1 }}
+                className={`flex flex-col gap-6 pt-0 md:pt-4 ${index % 2 === 0 ? 'md:items-end md:text-right' : 'md:items-start md:text-left'}`}
+              >
+                <div className="overflow-hidden rounded-sm border border-white/5 group shadow-2xl w-full max-w-sm">
+                  <img 
+                    src={item.image} 
+                    alt={item.title} 
+                    className="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-110" 
+                  />
+                </div>
+
+                <div className="space-y-3">
+                  <span className="text-secondary/60 font-display text-[10px] tracking-widest uppercase">{item.date}</span>
+                  <h3 className="text-primary font-display text-2xl uppercase tracking-widest">{item.title}</h3>
+                  <p className="text-secondary/60 font-sans text-sm leading-relaxed max-w-sm italic">
+                    {item.description}
+                  </p>
+                </div>
+              </motion.div>
             </div>
           ))}
         </div>
